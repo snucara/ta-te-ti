@@ -1,0 +1,307 @@
+import random
+import os
+
+def main():
+   aleatorio=" "
+   A1=" ";A2=" ";A3=" ";B1=" ";B2=" ";B3=" ";C1=" ";C2=" ";C3=" "
+   jugador=2
+   opciones1=("A1","A2","A3","B1","B2","B3","C1","C2","C3")
+   opciones2=("A1","A3","B2","C1","C3")
+   cont = 0
+   while True:
+
+         os.system("cls")
+         print("                          1        2         3")
+         print("                              |         |   ")
+         print("                    A    ",A1,"  |   ",A2,"   |   ",A3)
+         print("                              |         |   ")
+         print("                      ---------------------------")
+         print("                              |         |   ")
+         print("                    B    ",B1,"  |   ",B2,"   |   ",B3)
+         print("                              |         |   ")
+         print("                      ---------------------------")
+         print("                              |         |   ")
+         print("                    C    ",C1,"  |   ",C2,"   |   ",C3)
+         print("                              |         |   ")
+         print("     ")
+         print("     ")
+         if (A1 == "X" and A2=="X" and A3=="X") or (B1 == "X" and B2=="X" and B3=="X") or (C1 == "X" and C2=="X" and C3=="X")or\
+                 (A1 == "X" and B1 == "X" and C1 == "X")or(A2 == "X" and B2 == "X" and C2 == "X") or(A3 == "X" and B3 == "X" and C3 == "X") or\
+                 (A1 == "X" and B2 == "X" and C3 == "X")or(C1 == "X" and B2 == "X" and A3 == "X"):
+             print("GANASTE!!!")
+             print("     ")
+             sino=input("Jugamos de nuevo?<si-no>")
+             sino=sino.upper()
+             aleatorio="NO"
+             if sino=="SI":
+                 A1 = " ";A2 = " ";A3 = " ";B1 = " ";B2 = " ";B3 = " "; C1 = " ";C2 = " ";C3 = " "
+                 jugador = 2
+                 cont=0
+                 continue
+             else:
+                 break
+
+
+         if (A1 == "O" and A2=="O" and A3=="O") or (B1 == "O" and B2=="O" and B3=="O") or (C1 == "O" and C2=="O" and C3=="O")or\
+                 (A1 == "O" and B1 == "O" and C1 == "O")or(A2 == "O" and B2 == "O" and C2 == "O") or(A3 == "O" and B3 == "O" and C3 == "O") or \
+                 (A1 == "O" and B2 == "O" and C3 == "O")or(C1 == "O" and B2 == "O" and A3 == "O"):
+             print("GANO LA COMPUTADORA")
+             print("     ")
+             sino = input("Jugamos de nuevo?<si-no>")
+             sino = sino.upper()
+             aleatorio="NO"
+             if sino == "SI":
+                 A1 = " ";A2 = " ";A3 = " ";B1 = " ";B2 = " ";B3 = " ";C1 = " ";C2 = " "; C3 = " "
+                 jugador = 2
+                 cont=0
+                 continue
+             else:
+                 break
+
+         if   (A1!= " " )and (A2!=" " )and (A3!=" " ) and ( B1!= " " )and (B2!=" ") and (B3!=" ") and  (C1!= " ") and (C2!=" ") and( C3!=" "):
+             print("EMPATE")
+             print("    ")
+             sino = input("Jugamos de nuevo?<si-no>")
+             sino = sino.upper()
+             aleatorio="NO"
+             if sino == "SI":
+                 A1 = " ";A2 = " ";A3 = " ";B1 = " ";B2 = " ";B3 = " ";C1 = " "; C2 = " ";C3 = " "
+                 jugador = 2
+                 cont=0
+                 continue
+             else:
+                 break
+
+
+
+
+         if jugador==1:
+              aleatorio="NO"
+              print("TU TURNO:")
+              print("   ")
+              j=input("JUGADA:")
+              j=j.upper()
+              cont=cont+1
+
+         else:
+             contador2=0
+             print("TURNO DE LA COMPUTADORA")
+             print("    ")
+             print("EL SISTEMA ESTA ANALIZANDO LA JUGADA....")
+
+
+
+             if aleatorio!="SI":
+                  while True:
+                       contador2=contador2+1
+
+                       if contador2>=30000000:
+
+                           break
+
+
+
+             if A1 == "O" and A2 == "O" and A3 == " ":
+                      j = "A3"
+             elif A1 == "O" and A3 == "O" and A2==" ":
+                      j = "A2"
+             elif A2 == "O" and A3 == "O" and A1 == " ":
+                      j = "A1"
+
+             elif B1 == "O" and B2 == "O" and B3 == " ":
+                      j = "B3"
+             elif B1 == "O" and B3 == "O" and B2 == " ":
+                      j = "B2"
+             elif B2 == "O" and B3 == "O" and B1 == " ":
+                      j = "B1"
+
+             elif C1 == "O" and C2 == "O" and C3 == " ":
+                      j = "C3"
+             elif C1 == "O" and C3 == "O" and C2 == " ":
+                      j = "C2"
+             elif C2 == "O" and C3 == "O" and C1 == " ":
+                      j = "C1"
+
+             elif A1 == "O" and B1 == "O" and C1 == " ":
+                      j = "C1"
+             elif A1 == "O" and C1 == "O" and B1 == " ":
+                      j = "B1"
+             elif B1 == "O" and C1 == "O" and A1 == " ":
+                      j = "A1"
+
+             elif A2 == "O" and B2 == "O" and C2 == " ":
+                      j = "C2"
+             elif A2 == "O" and C2 == "O" and B2 == " ":
+                      j = "B2"
+             elif B2 == "O" and C2 == "O" and A2 == " ":
+                      j = "A2"
+
+             elif A3 == "O" and B3 == "O" and C3 == " ":
+                      j = "C3"
+             elif A3 == "O" and C3 == "O" and B3 == " ":
+                      j = "B3"
+             elif B3 == "O" and C3 == "O" and A3 == " ":
+                      j = "A3"
+
+             elif A1 == "O" and B2 == "O" and C3 == " ":
+                      j = "C3"
+             elif A1 == "O" and C3 == "O" and B2 == " ":
+                      j = "B2"
+             elif B2 == "O" and C3 == "O" and A1==" ":
+                      j = "A1"
+
+             elif C1 == "O" and B2 == "O" and A3 == " ":
+                      j = "A3"
+             elif C1 == "O" and A3 == "O" and B2 == " ":
+                      j = "B2"
+             elif B2 == "O" and A3 == "O" and C1 == " ":
+                      j = "C1"
+
+
+
+             elif A1=="X" and A2=="X" and A3==" ":
+                 j="A3"
+             elif A1=="X"and A3=="X"and A2==" ":
+                 j="A2"
+             elif A2=="X"and A3=="X"and A1==" ":
+                 j="A1"
+
+             elif B1 == "X" and B2 == "X" and B3==" ":
+                 j = "B3"
+             elif B1 == "X" and B3 == "X"and B2==" ":
+                 j = "B2"
+             elif B2 == "X" and B3 == "X"and B1==" ":
+                 j = "B1"
+
+             elif C1 == "X" and C2 == "X"and C3==" ":
+                 j = "C3"
+             elif C1 == "X" and C3 == "X"and C2==" ":
+                 j = "C2"
+             elif C2 == "X" and C3 == "X" and C1==" ":
+                 j = "C1"
+
+             elif A1 == "X" and B1 == "X"and C1==" ":
+                 j = "C1"
+             elif A1 == "X" and C1 == "X"and B1==" ":
+                 j = "B1"
+             elif B1 == "X" and C1 == "X"and A1==" ":
+                 j = "A1"
+
+             elif A2 == "X" and B2 == "X"and C2==" ":
+                 j = "C2"
+             elif A2 == "X" and C2 == "X"and B2==" ":
+                 j = "B2"
+             elif B2 == "X" and C2 == "X"and A2==" ":
+                 j = "A2"
+
+             elif A3 == "X" and B3 == "X"and C3==" ":
+                 j = "C3"
+             elif A3 == "X" and C3 == "X"and B3==" ":
+                 j = "B3"
+             elif B3 == "X" and C3 == "X"and A3==" ":
+                 j = "A3"
+
+             elif A1 == "X" and B2 == "X"and C3==" ":
+                 j = "C3"
+             elif A1 == "X" and C3 == "X"and B2==" ":
+                 j = "B2"
+             elif B2 == "X" and C3 == "X"and A1==" ":
+                 j = "A1"
+
+             elif C1 == "X" and B2 == "X"and A3==" ":
+                 j = "A3"
+             elif C1 == "X" and A3 == "X"and B2==" ":
+                 j = "B2"
+             elif B2 == "X" and A3 == "X"and C1==" ":
+                 j = "C1"
+             else:
+                 aleatorio="SI"
+                 if cont>=3:
+                      j=random.choice(opciones1)
+
+                 else:
+                     j=random.choice(opciones2)
+
+         print("    ")
+
+
+         if j=="A1" or j=="A2" or j=="A3" or j=="B1" or j=="B2" or j=="B3" or j=="C1" or j=="C2" or j=="C3":
+             if j=="A1":
+                if A1==" " and jugador==1:
+                     A1 = "X"
+                elif A1==" "and jugador==2:
+                     A1 = "O"
+                else:
+                    jugador=jugador-1
+             elif j=="A2":
+                 if A2 == " " and jugador==1:
+                     A2 = "X"
+                 elif A2==" " and jugador==2:
+                     A2 = "O"
+                 else:
+                     jugador=jugador-1
+             elif j == "A3":
+                 if A3 == " "and jugador==1:
+                     A3 = "X"
+                 elif  A3==" " and jugador==2:
+                     A3 = "O"
+                 else:
+                     jugador=jugador-1
+
+             elif j == "B1":
+                 if B1 == " "and jugador==1:
+                     B1 = "X"
+                 elif B1==" "and jugador==2:
+                     B1 ="O"
+                 else:
+                     jugador=jugador-1
+
+             elif j == "B2":
+                 if B2 == " "and jugador==1:
+                     B2 = "X"
+                 elif B2==" "and jugador==2:
+                     B2 = "O"
+                 else:
+                     jugador=jugador-1
+
+             elif j == "B3":
+                 if B3 == " "and jugador==1:
+                     B3 = "X"
+                 elif B3==" "and jugador==2:
+                     B3 = "O"
+                 else:
+                     jugador=jugador-1
+
+             elif j == "C1":
+                 if C1 == " " and jugador==1:
+                     C1 = "X"
+                 elif C1==" "and jugador==2:
+                     C1 = "O"
+                 else:
+                     jugador=jugador-1
+
+             elif j == "C2":
+                 if C2 == " "and jugador==1:
+                     C2 = "X"
+                 elif C2==" "and jugador==2:
+                     C2 = "O"
+                 else:
+                     jugador=jugador-1
+             elif j == "C3":
+                 if C3 == " "and jugador==1:
+                     C3 = "X"
+                 elif C3 ==" "and jugador==2:
+                     C3 = "O"
+                 else:
+                     jugador=jugador-1
+
+
+             jugador = jugador + 1
+             if jugador==3:
+                   jugador=1
+         else:
+             print("Ingreso incorrecto")
+
+
+
+main()
